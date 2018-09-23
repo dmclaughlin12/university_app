@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# university_app
+Ruby on Rails app for managing courses and sections for a university
 
 Things you may want to cover:
 
@@ -23,7 +21,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-=======
-# university_app
-Ruby on Rails app for managing courses and sections for a university
->>>>>>> origin/master
