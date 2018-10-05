@@ -5,5 +5,19 @@
 @import "bootstrap-sprockets";
 
 #course-header{
-    color: pink;
+    color: blue;
+}
+td, th {
+    padding: 0 10px;
+}
+.new-course{
+    border-style: solid;
+    background: grey;
+    color: white !important;
+    padding: 10px;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 7px;
+    margin: 5px;
+    font-weight: bold;
 }
