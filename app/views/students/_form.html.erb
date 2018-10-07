@@ -20,11 +20,11 @@
     <%= form.label :last_name %>
     <%= form.text_field :last_name %>
   </div>
-
-  <div class="field">
-    <%= form.label :section_id %>
-    <%= form.text_field :section_id %>
-  </div>
+    
+  <div class="field section">
+    <%= form.label :section %>
+      <%= form.grouped_collection_select :section_id, Course.order(:name), :sections, :name, :id, :name_with_number, include_blank: true%>
+    </div>
 
   <div class="actions">
     <%= form.submit %>

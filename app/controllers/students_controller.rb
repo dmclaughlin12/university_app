@@ -1,10 +1,17 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  
+  # GET /students/search
+  def student_search
+    @students = Students.search(params[:search].split('=').last)
+    respond_to :js
+  end
 
   # GET /students
   # GET /students.json
   def index
     @students = Student.all
+    @sections = Section.all
   end
 
   # GET /students/1
@@ -15,6 +22,8 @@ class StudentsController < ApplicationController
   # GET /students/new
   def new
     @student = Student.new
+    @sections = Section.all
+    @courses = Course.all
   end
 
   # GET /students/1/edit
