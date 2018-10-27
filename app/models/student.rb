@@ -4,4 +4,11 @@ class Student < ApplicationRecord
     validates :first_name, presence: true
     validates :last_name, presence: true
     
+    def self.search(search)
+      if search
+        Student.where("name LIKE ?", "%#{search}%")
+      else
+        Student.all
+      end
+    end
 end

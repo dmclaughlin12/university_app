@@ -14,3 +14,14 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $("#students th a, #students .pagination a").live("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+  $("#students_search").submit(function() {
+    $.get(this.action, $(this).serialize(), null, "script");
+    return false;
+  });
+});
