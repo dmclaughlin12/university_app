@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'spa/new'
+  get 'spa/create'
   resources :students
   resources :sections
   resources :courses

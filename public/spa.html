@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>A very simple SPA in Vue and Axios</title>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="Itemlist">
+    <button v-on:click="doajax('courses')">courses</button>
+    <button v-on:click="doajax('sections')">sections</button>
+    <button v-on:click="doajax('students')">students</button>
+    <ul>
+    <!--<div v-for="item in items">-->
+    <!--    <li>{{item.name}}</li>-->
+    <!--</div>-->
+    <div id="item">
+        {{items}}
+    </div>
+    </ul>
+</div>
+
+<script type="text/javascript">
+var ItemsVue = new Vue({
+    el: '#Itemlist',
+    data: { items: undefined },
+    methods: {
+        doajax: function(which) {
+            axios.get('http://910c6d80473d49a99c1edae8923871ab.vfs.cloud9.us-east-2.amazonaws.com/' + which )
+                .then(response => { 
+                    document.getElementById("item").innerHTML = response.data;
+                })
+                .catch(error => { console.log(error); });
+        }
+    }
+});
+
+// new Vue({
+// 	el:'#vue',
+// 	data(){
+//   	return {
+//     	string:undefined
+//     }
+//   },
+//   methods: {
+//         doajax: function(which) {
+//             axios.get('http://910c6d80473d49a99c1edae8923871ab.vfs.cloud9.us-east-2.amazonaws.com/' + which )
+//                 .then(response => { this.string = response.data })
+//                 .catch(error => { console.log(error); });
+//         }
+//     }
+// })
+</script>
+
+</body>
+</html>
